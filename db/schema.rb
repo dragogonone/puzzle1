@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306040016) do
-
-  create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160316102305) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password"
+    t.string  "name",                          null: false
+    t.string  "password_digest",               null: false
+    t.integer "coil",            default: 81
+    t.integer "pikachu",         default: 625
+  end
+
+  create_table "winners", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:users, url: puzzle_path) do |f| %>
+
+      <div>
+        <%= f.label :pikachu %>
+        <%= image_tag '/assets/images/pikachu.jpg' %>
+        ぴかちゅう：<%= current_user.pikachu %>
+        <%= f.radio_button :target,'pikachu' ,class: 'form-control',checked: true %>
+      </div>
+
+      <div>
+        <%= f.label :coil %>
+        <%= image_tag '/assets/images/coil.jpg' %>
+        こいる：<%= current_user.coil %>
+        <%= f.radio_button :target,'coil' ,class: 'form-control' %>
+      </div>
+      <%= f.submit "Vote", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
