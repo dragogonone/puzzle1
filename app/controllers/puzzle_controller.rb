@@ -19,18 +19,11 @@ class PuzzleController < ApplicationController
       render :text => '投票先がちがうよ'
     end
     if current_user.coil > current_user.pikachu
-      render :action => 'win'
+      redirect_to controller: 'winners', action: 'new'
       #redirect_to :action => 'win'
     else
       render :action => 'index'
     end
-  end
-
-  def win
-    if current_user.coil <= current_user.pikachu
-      redirect_to root_url
-    end
-    
   end
 
 end

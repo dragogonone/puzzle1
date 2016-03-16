@@ -1,0 +1,21 @@
+<p>
+  Winners
+</p>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>コメント</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @winner.present? %>
+      <% @winner.each do |w| %>
+        <tr>
+          <td><%= w.name %></td>
+          <td><%= w.win_comment%> </td>
+        </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
