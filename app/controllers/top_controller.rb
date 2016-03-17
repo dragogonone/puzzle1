@@ -1,5 +1,5 @@
 class TopController < ApplicationController
   def index
-    @user = User.new
+    @winner = User.where("win_comment not ?", nil)
   end
 end

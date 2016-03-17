@@ -9,7 +9,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+#暗号化
 gem 'bcrypt', '~> 3.1.7'
+
+#コンソール関連
+gem "pry-coolline"
+gem "pry-rails"
+gem "pry-byebug"
+gem "pry-stack_explorer"
+gem "awesome_print"
 gem 'hirb'
 gem 'hirb-unicode'
 

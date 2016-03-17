@@ -4,17 +4,13 @@ class WinnersController < ApplicationController
     check_user
   end
 
-  def show
-    @winner = User.where("win_comment not ?", nil)
-  end
-
   def create
     check_user
     if current_user.win_comment
-      render 'show'
+      log_out
+      redirect_to root_url
     else
-      current_user.update_attribute(:win_comment,params[:users][:win_comment])
-      render 'show'
+      current_user.update(win_comment: params[:users][:win_comment], win_at: Time.now.to_s(:db) )
     end
   end
 

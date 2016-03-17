@@ -4,13 +4,18 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to controller: 'puzzle', action: 'index'
+    else
+      @user = User.new
+    end
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.update_attribute(:created_at,Time.now.to_s(:db))
       if @user.save
         log_in @user
         redirect_to controller: 'puzzle', action: 'index'
@@ -26,7 +31,8 @@ class UsersController < ApplicationController
   #   end
   #
   #   # Never trust parameters from the scary internet, only allow the white list through.
-  #   def user_params
-  #     params.require(:user).permit(:name, :password, :password_confirmation)
-  #   end
+    private
+    def user_params
+      params.require(:user).permit(:name, :password, :password_confirmation)
+    end
 end
