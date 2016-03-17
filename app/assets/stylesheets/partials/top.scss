@@ -1,12 +1,10 @@
+$link_color: #ff4500;
+
 .top_index{
   .main{
-
     background-image: url("/assets/images/haikei_top.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    a{
-      color:#ff4500;
-    }
   }
   .hack_link{
     padding: 100px 0 80px;
@@ -18,9 +16,15 @@
     justify-content:         center;
     -webkit-align-items:center; /* Safari */
     align-items:center;
+    a{
+      color: $link_color;
+    }
   }
   .winner_link{
     text-align: center;
     font-size: 24px;
+    a{
+      color: $link_color;
+    }
   }
 }

@@ -9,6 +9,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+#ページャー
+gem 'kaminari'
+
 #暗号化
 gem 'bcrypt', '~> 3.1.7'
 
@@ -21,6 +24,7 @@ gem "awesome_print"
 gem 'hirb'
 gem 'hirb-unicode'
 
+#bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass'
 gem 'bootstrap_form'

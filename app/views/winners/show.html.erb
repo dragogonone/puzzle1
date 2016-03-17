@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>クリア日時</th>
+      <th>コメント</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @winner.present? %>
+    <% @winner.each do |w| %>
+    <tr>
+      <td><%= w.name %></td>
+      <td><%= w.win_at.in_time_zone('Tokyo') %></td>
+      <td><%= w.win_comment%> </td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate(@winner) %>

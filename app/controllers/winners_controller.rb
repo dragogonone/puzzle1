@@ -13,6 +13,11 @@ class WinnersController < ApplicationController
     redirect_to root_url
   end
 
+  def show
+    @winner = User.where("win_comment not ?", nil).order('win_at DESC').page(params[:page]).per(10)
+    #@winners = User.page params[:page]
+  end
+
   private
   def check_user
     if !logged_in? || current_user.coil <= current_user.pikachu

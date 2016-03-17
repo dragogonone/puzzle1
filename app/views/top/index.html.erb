@@ -9,6 +9,7 @@
       <a data-toggle="collapse" data-target="#winner">Winners(<%= @winner.count %>)</a>
     </div>
   </div>
+
   <div id="winner" class="collapse">
     <div class="accordion-inner">
       <table class="table table-bordered">
@@ -31,6 +32,9 @@
           <% end %>
         </tbody>
       </table>
+      <div class="winner_link">
+        <%= link_to "All Winners(#{@winner.count})", winners_path %>
+      </div>
     </div>
   </div>
 </div>
