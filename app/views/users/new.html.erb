@@ -2,19 +2,8 @@
   <div class="col-md-6 col-md-offset-3">
     <fieldset>
       <legend>Sign up</legend>
-      <%= bootstrap_form_for (@user) , layout: :horizontal do |f|  %>
-      <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-
+      <%= h(flash[:danger]) %>
+      <%= bootstrap_form_for @user, :url => {:action => 'create'} , layout: :horizontal do |f|  %>
       <%= f.text_field :name %>
       <%= f.password_field :password %>
       <%= f.form_group do %>

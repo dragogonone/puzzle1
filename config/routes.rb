@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   post 'login'   => 'sessions#create'
   delete 'login'  => 'sessions#destroy'
   get 'signup' => 'users#new'
-  post 'users' => 'users#create'
+  post 'signup' => 'users#create'
+  #railsが勝手にpostとpatchを使い分ける(謎)
+  patch 'signup' => 'users#create'
   get 'puzzle' => 'puzzle#index'
   post 'puzzle' => 'puzzle#vote'
   get 'puzzle' => 'puzzle#win'

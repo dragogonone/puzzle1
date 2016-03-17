@@ -7,15 +7,15 @@ protect_from_forgery except: [:index, :vote]
     #ログイン判定
     if logged_in?
       @user = current_user
+
+      #コイルが勝っていたら遷移
+      if current_user.coil > current_user.pikachu
+        redirect_to controller: 'winners', action: 'new'
+      else
+        render :action => 'index'
+      end
     else
       redirect_to root_url
-    end
-
-    #コイルが勝っていたら遷移
-    if current_user.coil > current_user.pikachu
-      redirect_to controller: 'winners', action: 'new'
-    else
-      render :action => 'index'
     end
 
   end
