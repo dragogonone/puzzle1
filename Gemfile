@@ -23,6 +23,8 @@ gem 'hirb-unicode'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass'
+gem 'bootstrap_form'
+
 
 group :development, :test do
   gem 'sqlite3'
