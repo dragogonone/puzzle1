@@ -1,6 +1,13 @@
-<h1>[不正投票パズルLv1]投票でコ●ル一位にして消防ども泣かそうぜwww</h1>
-<%= link_to "Hack", signup_path%>
-  <a data-toggle="collapse" data-target="#winner">Winners(<%= @winner.count %>)</a>
+<div class="top_index">
+  <div class="hack_link">
+    <%= image_tag("/assets/images/koilaiku.png") %>
+    <%= link_to "Hack!", signup_path%>
+    <%= image_tag("/assets/images/pikariki.png") %>
+
+  </div>
+  <div class="winner_link">
+    <a data-toggle="collapse" data-target="#winner">Winners(<%= @winner.count %>)</a>
+  </div>
   <div id="winner" class="collapse">
     <div class="accordion-inner">
       <table class="table table-striped table-bordered">
@@ -25,3 +32,4 @@
       </table>
     </div>
   </div>
+</div>

@@ -1,40 +1,36 @@
-<h1>
-投票フォーム
-</h1>
-<%= h(flash[:success]) %>
+<div class="puzzle_index">
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <form role="form" class="form-horizontal" action="/puzzle" accept-charset="UTF-8" method="post">
-      <div>
-        <img src="/assets/images/pikachu.jpg" alt="Pikachu" width="100" height="100" />
-        ぴかち●う：<%= current_user.pikachu %>
-
-        <div class="radio-inline">
-          <div class="radio">
-            <label for="users_target_pikachu">
-              <input class="form-control" type="radio" value="pikachu" checked="checked" name="target" id="users_target_pikachu" />
-            </label>
+    <fieldset>
+      <legend>投票フォーム</legend>
+      <%= h(flash[:success]) %>
+      <form role="form" class="form-horizontal" action="/puzzle" accept-charset="UTF-8" method="post">
+          <div class="form-group my-form-group">
+            <div class="radio-inline target-label">
+              <input type="radio" value="pikachu" checked="checked" name="target"/>
+              ぴかち●う：<%= current_user.pikachu %>
+            </div>
+            <img src="/assets/images/pikachu.jpg" alt="Pikachu" class="target-image" />
           </div>
-        </div>
 
-        <div>
-        <img src="/assets/images/coil.jpg" alt="Coil" width="100" height="100" />
-        こい●：<%= current_user.coil %>
-
-        <div class="radio-inline">
-          <div class="radio">
-            <label for="users_target_coil">
-              <input class="form-control" type="radio" value="coil" name="target" id="users_target_coil" />
-            </label>
+          <div class="form-group my-form-group">
+            <div class="radio-inline target-label">
+              <input type="radio" value="coil" name="target" />
+              こい●：<%= current_user.coil %>
+            </div>
+            <img src="/assets/images/coil.jpg" alt="Pikachu" class="target-image"/>
           </div>
-        </div>
-      </div>
-
-      <input type="submit" name="commit" value="Vote" class="btn btn-primary" />
-</form>
-
-      </div>
-
-    <a rel="nofollow" data-method="delete" href="/login">Log out</a>
+          <div class="form-group">
+            <input type="submit" name="commit" value="Vote" class="btn btn-primary" />
+          </div>
+      </form>
+    </fieldset>
+    <ul>
+      <li><%= link_to "Hint", "https://en.wikipedia.org/wiki/POST_(HTTP)" %></li>
+      <li><%= link_to "Original", "http://dic.nicovideo.jp/v/sm4205927" %></li>
+      <li><%= link_to "Log out", login_path, method: "delete" %></li>
+    </ul>
   </div>
+</div>
+</div>
 </div>

@@ -1,17 +1,21 @@
-<p>
-  Congratulation!
-</p>
-最終結果
-ぴかちゅう：<%= current_user.pikachu %>
-こいる：<%= current_user.coil %>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= bootstrap_form_for(:users, url: '/winners', layout: :horizontal) do |f| %>
+<div class="winner_new">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="congratulation">Congratulation!</div>
+      <div class="image">
+        <%= image_tag("/assets/images/columbia.png") %>
+      </div>
+      <div class="result">
+        <p>最終結果</p>
+        <p>ぴかちゅう：<%= current_user.pikachu %></p>
+        <p>こいる：<%= current_user.coil %></p>
+      </div>
+      <%= bootstrap_form_for(:users, url: '/winners', layout: :horizontal) do |f| %>
       <%= f.text_field :win_comment %>
-
       <%= f.form_group do %>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
