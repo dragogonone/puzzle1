@@ -1,10 +1,11 @@
 <p>
   Congratulation!
 </p>
+最終結果;
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= bootstrap_form_for(:users, url: '/winners', layout: :horizontal) do |f| %>
-      <%= f.text_field :win_commen %>
+      <%= f.text_field :win_comment %>
 
       <%= f.form_group do %>
         <%= f.submit "Submit", class: "btn btn-primary" %>
