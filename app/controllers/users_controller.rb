@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.update_attribute(:created_at,Time.now.to_s(:db))
+    @user.update_attribute(:created_at,Time.zone.now.to_s(:db))
       if @user.save
         log_in @user
         redirect_to controller: 'puzzle', action: 'index'

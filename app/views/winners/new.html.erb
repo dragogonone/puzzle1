@@ -1,7 +1,9 @@
 <p>
   Congratulation!
 </p>
-最終結果;
+最終結果
+ぴかちゅう：<%= current_user.pikachu %>
+こいる：<%= current_user.coil %>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= bootstrap_form_for(:users, url: '/winners', layout: :horizontal) do |f| %>
