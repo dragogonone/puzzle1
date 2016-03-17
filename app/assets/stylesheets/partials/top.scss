@@ -1,8 +1,23 @@
 .top_index{
+  .main{
+
+    background-image: url("/assets/images/haikei_top.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    a{
+      color:#ff4500;
+    }
+  }
   .hack_link{
-    margin: 100px 0;
+    padding: 100px 0 80px;
     text-align: center;
     font-size: 40px;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    -webkit-justify-content: center; /* Safari */
+    justify-content:         center;
+    -webkit-align-items:center; /* Safari */
+    align-items:center;
   }
   .winner_link{
     text-align: center;

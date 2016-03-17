@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>[ハッカーパズル]投票でコ●ル一位にして消防ども泣かそうぜwww</title>
+  <title>[投票パズルLv1]投票でコ●ル一位にして消防ども泣かそうぜwww</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%#= render 'meta/google_tag_manager' %>
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
 </head>
 <body>
   <%#= render 'layouts/header' %>
   <div class="container">
-    <h1 class="site_title">[不正投票パズルLv1]投票でコ●ル一位にして消防ども泣かそうぜwww</h1>
+    <h1 class="site_title">[投票パズルLv1]投票でコ●ル一位にして消防ども泣かそうぜwww</h1>
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
     <%= h(flash[:debug]) %>
