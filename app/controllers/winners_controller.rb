@@ -15,8 +15,7 @@ class WinnersController < ApplicationController
   end
 
   def show
-    @winner = User.where("win_comment not ?", nil).order('win_at DESC').page(params[:page]).per(10)
-    #@winners = User.page params[:page]
+    @winner = User.where.not(win_comment: nil).limit(10).order('win_at DESC').page(params[:page]).per(10)
   end
 
   private
