@@ -24,13 +24,13 @@ protect_from_forgery except: [:index, :vote]
 
     #投票された対象のデータベースの値をインクリメント
     if params[:target] == 'pikachu'
-      flash[:success] = 'ピカチュウに投票！'
-      current_user.update(pikachu: current_user.pikachu+1)
+      flash[:success] = 'ぴ●ちゅうに投票！'
+      current_user.update_attribute(:pikachu,current_user.pikachu+1)
     elsif params[:target] == 'coil'
-      flash[:success] = 'コイルに投票！'
+      flash[:success] = '●イルに投票！'
       current_user.update_attribute(:coil,current_user.coil+1)
     end
-
+    
     redirect_to :action => 'index'
 
   end
