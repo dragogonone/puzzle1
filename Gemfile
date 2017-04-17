@@ -29,6 +29,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-sass'
 gem 'bootstrap_form'
 
+#for rails bug
+gem 'json', github: 'flori/json', branch: 'v1.8'
 
 group :development, :test do
   gem 'sqlite3'
