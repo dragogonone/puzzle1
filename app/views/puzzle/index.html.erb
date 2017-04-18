@@ -11,7 +11,7 @@
           <div class="form-group my-form-group">
             <div class="radio-inline target-label">
               <input type="radio" value="pikachu" checked="checked" name="target"/>
-              ぴかち●う：<%= current_user.pikachu %>
+              ピカチュウ：<%= current_user.pikachu %>
             </div>
             <img src="/assets/images/pikachu.jpg" alt="Pikachu" class="target-image" />
           </div>
@@ -19,7 +19,7 @@
           <div class="form-group my-form-group">
             <div class="radio-inline target-label">
               <input type="radio" value="coil" name="target" />
-              こい●：<%= current_user.coil %>
+              コイル：<%= current_user.coil %>
             </div>
             <img src="/assets/images/coil.jpg" alt="Pikachu" class="target-image"/>
           </div>
@@ -29,7 +29,6 @@
       </form>
     </fieldset>
     <ul class="links">
-      <li><%= link_to "ヒント", "https://en.wikipedia.org/wiki/POST_(HTTP)" %></li>
       <li><%= link_to "元ネタ", "http://dic.nicovideo.jp/v/sm4205927" %></li>
       <li><%= link_to "ログアウト", login_path, method: "delete" %></li>
     </ul>
