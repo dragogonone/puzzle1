@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-A
 ruby '2.4.0'
 
 gem 'rails', github: 'rails/rails', branch: '4-2-stable'
